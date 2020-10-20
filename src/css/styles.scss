@@ -1,0 +1,10 @@
+@import './vars/vars';
+body {
+	height: 100vh;
+	background-color: aquamarine;
+	color: $color;
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
