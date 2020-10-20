@@ -51,7 +51,7 @@ const imgTask = () => {
 		.pipe(dest('dist/img/'));
 };
 const compressTask = () => {
-	return src('dist').pipe(zip('app.zip')).pipe(dest('.'));
+	return src('dist/**/*.*').pipe(zip('app.zip')).pipe(dest('.'));
 };
 const syncTask = () => {
 	return connect.server({ root: 'dist', livereload: true });
@@ -70,4 +70,5 @@ exports.js = jsTask;
 exports.img = imgTask;
 exports.compress = compressTask;
 exports.sync = syncTask;
+exports.build = compressTask;
 exports.default = parallel(watchTask, syncTask);
